@@ -1,0 +1,10 @@
+{
+  "name": "pack",
+  "version": "0.0.0",
+  "description": "Two-dimensional rectangle packer",
+  "author": "Brandon Semilla <semibran@gmail.com>",
+  "repository": "semibran/pack",
+  "license": "MIT",
+  "files": ["index.js"],
+  "keywords": ["2d", "two-dimensional", "rect", "packing", "algorithm"]
+}
