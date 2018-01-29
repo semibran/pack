@@ -1,6 +1,6 @@
 const pack = require("../")
 const render = require("./render")
-const sizes = new Array(5)
+const sizes = new Array(6)
 for (let i = sizes.length; i--;) {
   sizes[i] = [
     Math.floor(Math.random() * 6) + 1,

@@ -1,14 +1,5 @@
 const scale = 16
-const colors = [ "red", "blue", "lime", "yellow", "fuchsia", "aqua", "silver" ]
-const darken = {
-  red: "maroon",
-  lime: "green",
-  yellow: "olive",
-  blue: "navy",
-  aqua: "teal",
-  fuchsia: "purple",
-  silver: "gray"
-}
+const colors = [ "maroon", "navy", "green", "olive", "purple", "teal" ]
 
 module.exports = function render(layout, canvas) {
   if (!canvas) canvas = document.createElement("canvas")
@@ -17,7 +8,7 @@ module.exports = function render(layout, canvas) {
   canvas.height = Math.round(layout.size[1] * scale)
   for (let i = 0; i < layout.rects.length; i++) {
     let rect = layout.rects[i]
-    let color = colors[i]
+    let color = colors[i % colors.length]
     context.beginPath()
     context.rect(
       Math.round(rect.position[0] * scale + 1),
