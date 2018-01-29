@@ -3,6 +3,8 @@
 
 ![boxes](boxes.png)
 
+This module contains a box packing algorithm which determines the most compact configuration for a set of `[ width, height ]` pairs by rating all possible permutations by amount of whitespace remaining.
+
 ## usage
 
 ### `pack(sizes[, layout]) -> layout`
@@ -19,7 +21,7 @@ var layout = {
   ]
 }
 ```
-The resulting layout will be built around `layout` if one is provided, otherwise an empty one will be created.
+The resulting layout will be built around `layout` if one is provided (this is used internally for recursion), otherwise an empty one will be created.
 
 ## license
 [MIT](https://opensource.org/licenses/MIT) © [Brandon Semilla](https://git.io/semibran)
