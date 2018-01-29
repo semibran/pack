@@ -3,7 +3,7 @@
 
 ![boxes](boxes.png)
 
-This module contains a box packing algorithm which determines the most compact configuration for a set of `[ width, height ]` pairs by rating all possible permutations by amount of whitespace remaining.
+This module contains a [box packing algorithm](https://en.wikipedia.org/wiki/Bin_packing_problem) which determines the most compact configuration for a set of `[ width, height ]` pairs. To this end, it calculates all possible permutations and rates them by amount of whitespace remaining. The boxes are placed in a single container that grows appropriately as they are packed inside.
 
 ## usage
 
