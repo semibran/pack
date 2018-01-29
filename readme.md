@@ -1,5 +1,5 @@
 # pack
-> Two-dimensional rectangle packer
+> Rectangle packer
 
 ![boxes](boxes.png)
 
