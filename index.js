@@ -2,7 +2,7 @@ module.exports = function pack(sizes, layout) {
   if (!layout) layout = { size: [ 0, 0 ], rects: [] }
   if (!sizes.length) return layout
   var positions = scan(layout)
-  var options = []
+  var best = { score: Infinity, layout: null }
   for (var i = 0; i < sizes.length; i++) {
     var unique = true
     for (var j = 0; j < i; j++) {
@@ -17,23 +17,18 @@ module.exports = function pack(sizes, layout) {
     remaining.splice(i, 1)
     for (var j = 0; j < positions.length; j++) {
       var position = positions[j]
-      var option = append(layout, { size: size, position: position })
-      if (validate(option)) {
-        options.push(pack(remaining, option))
+      var next = append(layout, { size: size, position: position })
+      if (validate(next)) {
+        var last = pack(remaining, next)
+        var score = rate(last)
+        if (score < best.score) {
+          best.score = score
+          best.layout = last
+        }
       }
     }
   }
-  var lowest = Infinity
-  var best = null
-  for (var i = 0; i < options.length; i++) {
-    var option = options[i]
-    var score = rate(option)
-    if (score < lowest) {
-      best = option
-      lowest = score
-    }
-  }
-  return best
+  return best.layout
 }
 
 function rate(layout) {
