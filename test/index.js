@@ -1,6 +1,6 @@
 const pack = require("../")
 const render = require("./render")
-const sizes = new Array(6)
+const sizes = new Array(5)
 for (let i = sizes.length; i--;) {
   sizes[i] = [
     Math.floor(Math.random() * 6) + 1,
@@ -8,12 +8,9 @@ for (let i = sizes.length; i--;) {
   ]
 }
 
-let layouts = pack(sizes)
-for (let layout of layouts) {
-  let canvas = render(layout)
-  canvas.style.margin = "8px"
-  document.body.appendChild(canvas)
-}
+let layout = pack(sizes)
+let canvas = render(layout)
+document.body.appendChild(canvas)
 
 console.log(sizes)
-console.log(layouts)
+console.log(layout)
