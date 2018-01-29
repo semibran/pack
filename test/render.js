@@ -16,7 +16,7 @@ module.exports = function render(layout, canvas) {
       Math.round(rect.size[0] * scale - 2),
       Math.round(rect.size[1] * scale - 2)
     )
-    context.fillStyle = darken[color]
+    context.fillStyle = color
     context.fill()
   }
   return canvas
