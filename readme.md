@@ -1,5 +1,5 @@
 # pack
-> Rectangle packer
+> Lightweight rectangle packer
 
 ![boxes](boxes.png)
 
