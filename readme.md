@@ -6,6 +6,7 @@ This module contains a [box packing algorithm](https://en.wikipedia.org/wiki/Bin
 Unlike traditional bin packing algorithms, the boxes here are placed in a single container that grows appropriately as they are packed inside. This property makes it ideal for assembling spritesheets given a list of images.
 
 ## usage
+[![npm](https://nodei.co/npm/pack.png?mini)](https://www.npmjs.com/package/pack "View npm package")
 
 ### `pack(sizes[, layout]) -> layout`
 Arranges a list of `[ width, height ]` pairs into the most compact `layout` possible. The result will be reminiscent of the following data structure:
@@ -22,6 +23,9 @@ var layout = {
 }
 ```
 The boxes will be placed around the provided `layout` if given (this is used internally for recursion), otherwise an empty one will be created.
+
+## kudos
+* [leo](https://github.com/leo) - for donating the package name
 
 ## license
 [MIT](https://opensource.org/licenses/MIT) © [Brandon Semilla](https://git.io/semibran)
