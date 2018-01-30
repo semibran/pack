@@ -14,14 +14,14 @@ var layout = {
   size: [ 3, 3 ],
   boxes: [
     { size: [ 2, 1 ], position: [ 0, 0 ] },
-    { size: [ 1, 2 ], position: [ 2, 0 ] },
-    { size: [ 1, 2 ], position: [ 0, 1 ] },
-    { size: [ 1, 1 ], position: [ 1, 1 ] },
     { size: [ 2, 1 ], position: [ 1, 2 ] }
+    { size: [ 1, 2 ], position: [ 0, 1 ] },
+    { size: [ 1, 2 ], position: [ 2, 0 ]re },
+    { size: [ 1, 1 ], position: [ 1, 1 ] },
   ]
 }
 ```
-The resulting layout will be built around `layout` if one is provided (this is used internally for recursion), otherwise an empty one will be created.
+The boxes will be placed around the provided `layout` if given (this is used internally for recursion), otherwise an empty one will be created.
 
 ## license
 [MIT](https://opensource.org/licenses/MIT) © [Brandon Semilla](https://git.io/semibran)
