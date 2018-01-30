@@ -1,5 +1,5 @@
 # pack
-![A surprisingly difficult box configuration to arrive at without using lookaheads](boxes.png)
+![boxes](boxes.png "A surprisingly unintuitive box configuration to arrive at without utilizing lookaheads")
 
 This module contains a [box packing algorithm](https://en.wikipedia.org/wiki/Bin_packing_problem) which calculates the most compact configuration for a set of rectangles, as modeled via `[ width, height ]` pairs. To this end, it calculates all possible permutations and rates them by area of whitespace remaining.
 
