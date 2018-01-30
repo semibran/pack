@@ -1,7 +1,7 @@
 {
   "name": "pack",
   "version": "0.0.0",
-  "description": "Lightweight rectangle",
+  "description": "Lightweight rectangle packing algorithm",
   "author": "Brandon Semilla <semibran@gmail.com>",
   "repository": "semibran/pack",
   "license": "MIT",
