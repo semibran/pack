@@ -17,7 +17,8 @@ module.exports = function pack(sizes, layout) {
     remaining.splice(i, 1)
     for (var j = 0; j < positions.length; j++) {
       var position = positions[j]
-      var next = append(layout, { size: size, position: position })
+      var rect = { size: size, position: position }
+      var next = append(layout, rect)
       if (validate(next)) {
         var last = pack(remaining, next)
         var score = rate(last)
