@@ -1,5 +1,5 @@
 module.exports = function pack(sizes, layout) {
-  if (!layout) layout = { size: [ 0, 0 ], rects: [] }
+  if (!layout) layout = { size: [ 0, 0 ], boxes: [] }
   if (!sizes.length) return layout
   var positions = scan(layout)
   var best = { score: Infinity, layout: null }
@@ -17,8 +17,8 @@ module.exports = function pack(sizes, layout) {
     remaining.splice(i, 1)
     for (var j = 0; j < positions.length; j++) {
       var position = positions[j]
-      var rect = { size: size, position: position }
-      var next = append(layout, rect)
+      var box = { size: size, position: position }
+      var next = append(layout, box)
       if (validate(next)) {
         var last = pack(remaining, next)
         var score = rate(last)
@@ -34,45 +34,45 @@ module.exports = function pack(sizes, layout) {
 
 function rate(layout) {
   var area = layout.size[0] * layout.size[1]
-  for (var i = 0; i < layout.rects.length; i++) {
-    var rect = layout.rects[i]
-    area -= rect.size[0] * rect.size[1]
+  for (var i = 0; i < layout.boxes.length; i++) {
+    var box = layout.boxes[i]
+    area -= box.size[0] * box.size[1]
   }
   return area
 }
 
 function scan(layout) {
   var positions = [ [ 0, 0 ] ]
-  for (var i = 0; i < layout.rects.length; i++) {
-    var rect = layout.rects[i]
+  for (var i = 0; i < layout.boxes.length; i++) {
+    var box = layout.boxes[i]
     positions.push(
-      [ rect.position[0] + rect.size[0], 0 ],
-      [ 0, rect.position[1] + rect.size[1] ],
+      [ box.position[0] + box.size[0], 0 ],
+      [ 0, box.position[1] + box.size[1] ],
     )
-    if (rect.position[0]) positions.push([ rect.position[0], rect.position[1] + rect.size[1] ])
-    if (rect.position[1]) positions.push([ rect.position[0] + rect.size[0], rect.position[1] ])
+    if (box.position[0]) positions.push([ box.position[0], box.position[1] + box.size[1] ])
+    if (box.position[1]) positions.push([ box.position[0] + box.size[0], box.position[1] ])
   }
   return positions
 }
 
-function append(layout, rect) {
+function append(layout, box) {
   var size = layout.size.slice()
-  var rects = layout.rects.slice()
-  if (rect.position[0] + rect.size[0] > size[0]) {
-    size[0] = rect.position[0] + rect.size[0]
+  var boxes = layout.boxes.slice()
+  if (box.position[0] + box.size[0] > size[0]) {
+    size[0] = box.position[0] + box.size[0]
   }
-  if (rect.position[1] + rect.size[1] > size[1]) {
-    size[1] = rect.position[1] + rect.size[1]
+  if (box.position[1] + box.size[1] > size[1]) {
+    size[1] = box.position[1] + box.size[1]
   }
-  rects.push(rect)
-  return { size: size, rects: rects }
+  boxes.push(box)
+  return { size: size, boxes: boxes }
 }
 
 function validate(layout) {
-  for (var i = 0; i < layout.rects.length - 1; i++) {
-    var a = layout.rects[i]
-    for (var j = i + 1; j < layout.rects.length; j++) {
-      var b = layout.rects[j]
+  for (var i = 0; i < layout.boxes.length - 1; i++) {
+    var a = layout.boxes[i]
+    for (var j = i + 1; j < layout.boxes.length; j++) {
+      var b = layout.boxes[j]
       if (intersects(a, b)) {
         return false
       }

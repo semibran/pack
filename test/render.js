@@ -6,15 +6,15 @@ module.exports = function render(layout, canvas) {
   var context = canvas.getContext("2d")
   canvas.width = layout.size[0] * 16
   canvas.height = layout.size[1] * 16
-  for (var i = 0; i < layout.rects.length; i++) {
-    var rect = layout.rects[i]
+  for (var i = 0; i < layout.boxes.length; i++) {
+    var box = layout.boxes[i]
     var color = colors[i]
     context.beginPath()
     context.rect(
-      rect.position[0] * scale + 2,
-      rect.position[1] * scale + 2,
-      rect.size[0] * scale - 4,
-      rect.size[1] * scale - 4
+      box.position[0] * scale + 2,
+      box.position[1] * scale + 2,
+      box.size[0] * scale - 4,
+      box.size[1] * scale - 4
     )
     context.fillStyle = color
     context.globalAlpha = 0.25

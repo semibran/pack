@@ -1,7 +1,7 @@
 # pack
 ![boxes](boxes.png "A surprisingly unintuitive box configuration to arrive at without utilizing lookaheads")
 
-This module contains a [box packing algorithm](https://en.wikipedia.org/wiki/Bin_packing_problem) which calculates the most compact configuration for a set of rectangles, as modeled via `[ width, height ]` pairs. To this end, it calculates all possible permutations and rates them by area of whitespace remaining.
+This module contains a [box packing algorithm](https://en.wikipedia.org/wiki/Bin_packing_problem) which determines the most compact configuration for a set of rectangles, as modeled via `[ width, height ]` pairs. To this end, it calculates all possible [permutations](https://en.wikipedia.org/wiki/Permutation) and rates them by area of whitespace remaining.
 
 Unlike traditional bin packing algorithms, the boxes here are placed in a single container that grows appropriately as they are packed inside. This property makes it ideal for assembling spritesheets given a list of images.
 
