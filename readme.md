@@ -16,7 +16,7 @@ var layout = {
     { size: [ 2, 1 ], position: [ 0, 0 ] },
     { size: [ 2, 1 ], position: [ 1, 2 ] }
     { size: [ 1, 2 ], position: [ 0, 1 ] },
-    { size: [ 1, 2 ], position: [ 2, 0 ]re },
+    { size: [ 1, 2 ], position: [ 2, 0 ] },
     { size: [ 1, 1 ], position: [ 1, 1 ] },
   ]
 }
