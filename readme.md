@@ -7,16 +7,6 @@
 
 Unlike traditional bin packing algorithms, the boxes here are placed in a single container that grows appropriately as they are packed inside. This property makes it ideal for assembling spritesheets given a list of images.
 
-## demo
-[A rough example](https://semibran.github.io/pack/) has been designed for testing and demonstration purposes.
-
-* **Click and drag** to create a box.
-* **Press `P`** to pack existing boxes.
-* **Press `R`** to generate a random configuration.
-* **Press `N`** to reset the layout to its initial state.
-
-In this demo, boxes are chunked into groups of 4 as they are packed together to reduce calculation times. Unfortunately, this approach tends to yield suboptimal results. This issue will be addressed as library performance is improved upon.
-
 ## usage
 [![npm](https://nodei.co/npm/pack.png?mini)](https://www.npmjs.com/package/pack "View npm package")
 
@@ -36,6 +26,16 @@ var layout = {
 }
 ```
 The boxes will be placed around the provided `layout` if given (this is used internally for recursion), otherwise an empty one will be created.
+
+## demo
+[A rough example](https://semibran.github.io/pack/) has been designed for testing and demonstration purposes.
+
+* **Click and drag** to create a box.
+* **Press `P`** to pack existing boxes.
+* **Press `R`** to generate a random configuration.
+* **Press `N`** to reset the layout to its initial state.
+
+In this demo, boxes are chunked into groups of 4 as they are packed together to reduce calculation times. Unfortunately, this approach tends to yield suboptimal results. This issue will be addressed as library performance is improved upon.
 
 ## kudos
 * [leo](https://github.com/leo) - for donating the package name
