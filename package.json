@@ -6,7 +6,7 @@
   "repository": "semibran/pack",
   "license": "MIT",
   "files": [
-    "lib/index.js"
+    "lib"
   ],
   "keywords": [
     "box",
