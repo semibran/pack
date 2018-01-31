@@ -1,5 +1,6 @@
-const pack = require("../lib")
-const render = require("./render")
+import pack from "../lib"
+import render from "./render"
+
 const app = {
   state: {
     cursor: {
@@ -15,24 +16,21 @@ const app = {
     cursor: {
       move: (state, position) => {
         let { cursor, layout } = state
-        if (cursor.selection && cursor.selection[0] === layout.size[0] && cursor.selection[1] === layout.size[1]) {
-          layout.size[0] = cursor.position[0]
-          layout.size[1] = cursor.position[1]
-          cursor.selection[0] = cursor.position[0]
-          cursor.selection[1] = cursor.position[1]
-        } else {
-          if (position[0] < 0) position[0] = 0
-          if (position[1] < 0) position[1] = 0
-          if (position[0] > layout.size[0]) position[0] = layout.size[0]
-          if (position[1] > layout.size[1]) position[1] = layout.size[1]
-        }
+        if (position[0] < 0) position[0] = 0
+        if (position[1] < 0) position[1] = 0
+        if (position[0] > layout.size[0]) position[0] = layout.size[0]
+        if (position[1] > layout.size[1]) position[1] = layout.size[1]
         cursor.position = position
       },
       select: (state) => {
-        state.cursor.selection = state.cursor.position.slice()
+        let { cursor, layout } = state
+        if (layout.boxes.length < 6) {
+          cursor.selection = cursor.position.slice()
+        }
       },
       deselect: (state) => {
         let { cursor, layout } = state
+        if (!cursor.selection) return
         let origin = cursor.selection.slice()
         let target = cursor.position
         let width = target[0] - origin[0]
@@ -60,6 +58,25 @@ const app = {
         let time = performance.now()
         state.layout = pack(sizes)
         console.log(performance.now() - time)
+      },
+      reset: (state) => {
+        state.layout = {
+          size: [ 16, 16 ],
+          boxes: []
+        }
+      },
+      randomize: (state) => {
+        let count = 6
+        let sizes = new Array(count)
+        for (var i = count; i--;) {
+          sizes[i] = [
+            Math.floor(Math.random() * 7) + 1,
+            Math.floor(Math.random() * 7) + 1
+          ]
+        }
+        console.log(sizes)
+        state.layout = pack(sizes)
+        console.log(state.layout)
       }
     }
   }
@@ -89,8 +106,14 @@ window.addEventListener("mouseup", event => {
 })
 
 window.addEventListener("keyup", event => {
-  if (event.code === "Space") {
+  if (event.code === "KeyP") {
     app.actions.layout.pack(app.state)
+    render(app.state, canvas)
+  } else if (event.code === "KeyN") {
+    app.actions.layout.reset(app.state)
+    render(app.state, canvas)
+  } else if (event.code === "KeyR") {
+    app.actions.layout.randomize(app.state)
     render(app.state, canvas)
   }
 })
