@@ -1,5 +1,8 @@
 # pack
-[![boxes](boxes.png)](https://semibran.github.io/pack/ "Click to view a rough demo")
+
+[View the demo!](#demo)
+
+![boxes](boxes.png)
 
 `pack` is a [box packing algorithm](https://en.wikipedia.org/wiki/Bin_packing_problem) which determines the most compact configuration for a set of rectangles. To this end, it calculates all possible [permutations](https://en.wikipedia.org/wiki/Permutation) and rates them by area of whitespace remaining.
 
