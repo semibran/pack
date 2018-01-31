@@ -21,7 +21,7 @@ clean:
 	mkdir dist
 
 html:
-	cp src/index.html -t dist
+	cp demo/index.html -t dist
 
 js:
-	rollup src/app.js -o dist/app.js -f iife -m -c
+	rollup demo/app.js -o dist/app.js -f iife -m -c
