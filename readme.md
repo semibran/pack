@@ -1,5 +1,5 @@
 # pack
-> :package: lightweight rectangle packing algorithm
+> lightweight rectangle packing algorithm
 
 [![boxes](boxes.png)](https://semibran.github.io/pack/ "Click to view a rough demo")
 
