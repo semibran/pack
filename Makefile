@@ -7,11 +7,12 @@ SHELL := /bin/bash
 .SILENT:
 
 all: fresh
-	babel dist/app.js --presets=env | uglifyjs -o dist/app.js -c -m --source-map "url='app.js.map',content='dist/app.js.map'" &
+	babel dist/app.js --presets=env | uglifyjs -o dist/app.js -c -m &
 	html-minifier --collapse-whitespace dist/index.html -o dist/index.html
+	rm dist/app.js.map
 
 deploy: all
-	gh-pages -d dist
+	gh-pages -d dist -m $(message)
 
 fresh: clean html js
 
