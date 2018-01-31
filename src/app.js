@@ -23,10 +23,7 @@ const app = {
         cursor.position = position
       },
       select: (state) => {
-        let { cursor, layout } = state
-        if (layout.boxes.length < 6) {
-          cursor.selection = cursor.position.slice()
-        }
+        state.cursor.selection = state.cursor.position.slice()
       },
       deselect: (state) => {
         let { cursor, layout } = state
@@ -55,9 +52,16 @@ const app = {
     layout: {
       pack: (state) => {
         let sizes = state.layout.boxes.map(box => box.size)
-        let time = performance.now()
-        state.layout = pack(sizes)
-        console.log(performance.now() - time)
+        if (sizes.length <= 6) {
+          state.layout = pack(sizes)
+        } else {
+          let layout = null
+          for (let i = 0; i < sizes.length; i += 4) {
+            let chunk = sizes.slice(i, i + 4)
+            layout = pack(chunk, layout)
+          }
+          state.layout = layout
+        }
       },
       reset: (state) => {
         state.layout = {
