@@ -1,17 +1,19 @@
 # pack
-[![boxes](boxes.png)](https://semibran.github.io/pack/ "Click to view the demo")
+[![boxes](boxes.png)](https://semibran.github.io/pack/ "Click to view a rough demo")
 
 `pack` is a [box packing algorithm](https://en.wikipedia.org/wiki/Bin_packing_problem) which determines the most compact configuration for a set of rectangles. To this end, it calculates all possible [permutations](https://en.wikipedia.org/wiki/Permutation) and rates them by area of whitespace remaining.
 
 Unlike traditional bin packing algorithms, the boxes here are placed in a single container that grows appropriately as they are packed inside. This property makes it ideal for assembling spritesheets given a list of images.
 
 ## demo
-I designed [a brief example](https://semibran.github.io/pack/) for testing and demonstration purposes.
+[A rough example](https://semibran.github.io/pack/) has been designed for testing and demonstration purposes.
 
 * **Click and drag** to create a box.
 * **Press `P`** to pack existing boxes.
 * **Press `R`** to generate a random configuration.
 * **Press `N`** to reset the layout to its initial state.
+
+In this demo, boxes are chunked into groups of 4 as they are packed together to reduce calculation times. Unfortunately, this approach tends to yield suboptimal results. This will be fixed as library performance is improved upon.
 
 ## usage
 [![npm](https://nodei.co/npm/pack.png?mini)](https://www.npmjs.com/package/pack "View npm package")
