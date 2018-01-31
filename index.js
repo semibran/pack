@@ -13,8 +13,11 @@ module.exports = function pack(sizes, layout) {
     }
     if (!unique) continue
     var size = sizes[i]
-    var remaining = sizes.slice()
-    remaining.splice(i, 1)
+    var remaining = new Array(sizes.length - 1)
+    for (var j = 0; j < sizes.length - 1; j++) {
+      if (j < i) remaining[j] = sizes[j]
+      else remaining[j] = sizes[j + 1]
+    }
     for (var j = 0; j < positions.length; j++) {
       var position = positions[j]
       var box = { size: size, position: position }
