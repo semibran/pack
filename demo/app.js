@@ -1,4 +1,4 @@
-import pack from "../lib"
+import pack from "../lib/pack"
 import render from "./render"
 
 const app = {
@@ -87,7 +87,7 @@ const app = {
 }
 
 let canvas = render(app.state)
-document.body.style.background = "black"
+document.body.style.background = "whitesmoke"
 document.body.appendChild(canvas)
 
 let rect = canvas.getBoundingClientRect()
