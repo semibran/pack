@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: whitesmoke;
+}
+
+canvas {
+	border-top: thin solid silver;
+	border-left: thin solid silver;
+}

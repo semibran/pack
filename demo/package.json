@@ -1,0 +1,26 @@
+{
+  "name": "pack",
+  "version": "0.0.0",
+  "description": "pack demo",
+  "author": "semibran (Brandon Semilla)",
+  "repository": "semibran/pack",
+  "license": "MIT",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "clean-css-cli": "^4.1.11",
+    "gh-pages": "^1.1.0",
+    "html-minifier": "^3.5.10",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^5.0.0",
+    "rollup": "^0.56.5",
+    "rollup-plugin-commonjs": "^9.0.0",
+    "rollup-plugin-node-resolve": "^3.2.0",
+    "uglify-js": "^3.3.14"
+  }
+}
