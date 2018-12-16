@@ -1,8 +1,9 @@
 # pack
+> lightweight rectangle packer
 
-[View the demo!](#demo)
+[View the demo!](https://semibran.github.io/pack)
 
-![boxes](boxes.png)
+![boxes](img/boxes.png)
 
 `pack` is a [box packing algorithm](https://en.wikipedia.org/wiki/Bin_packing_problem) which attempts to determine the most compact configuration for a set of rectangles. To this end, it employs the first-fit decreasing (FFD) algorithm to place the boxes, using the length of the layout's shortest side length as a heuristic.
 
@@ -26,9 +27,6 @@ var layout = {
   ]
 }
 ```
-
-## demo
-[A small example](https://semibran.github.io/pack/) has been designed for testing and demonstration purposes.
 
 ## kudos
 * [leo](https://github.com/leo) - for donating the package name
