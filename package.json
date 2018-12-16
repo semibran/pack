@@ -1,6 +1,6 @@
 {
   "name": "pack",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "lightweight rectangle packer",
   "author": "semibran (Brandon Semilla)",
   "repository": "semibran/pack",
