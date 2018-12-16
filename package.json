@@ -2,27 +2,13 @@
   "name": "pack",
   "version": "2.1.0",
   "description": "lightweight rectangle packing algorithm",
-  "author": "Brandon Semilla <semibran@gmail.com>",
+  "author": "semibran (Brandon Semilla)",
   "repository": "semibran/pack",
   "license": "MIT",
-  "files": [
-    "lib"
-  ],
+  "main": "lib/pack.js",
   "keywords": [
-    "box",
-    "rect",
-    "rectangle",
-    "pack",
-    "packing",
-    "algorithm"
-  ],
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "gh-pages": "^1.1.0",
-    "html-minifier": "^3.5.8",
-    "rollup": "^0.55.1",
-    "rollup-plugin-commonjs": "^8.3.0",
-    "uglify-js": "^3.3.9"
-  }
+    "rectangle packing",
+    "bin packing",
+    "combinatorial optimization"
+  ]
 }
