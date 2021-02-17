@@ -1,6 +1,7 @@
 import pack from '../../lib/pack'
 
 const TILE_SIZE = 16
+const NUM_OF_RECTS = 32
 const MIN_RECT_SIZE = 2
 const MAX_RECT_SIZE = 8
 const colors = ['maroon', 'navy', 'green', 'olive', 'purple', 'teal']
@@ -13,7 +14,7 @@ const genRect = (min, max) => ({
   height: getSize(min, max)
 })
 
-const sizes = new Array(16).fill()
+const sizes = new Array(NUM_OF_RECTS).fill()
   .map(() => genRect(MIN_RECT_SIZE, MAX_RECT_SIZE))
 
 const layout = pack(sizes)
