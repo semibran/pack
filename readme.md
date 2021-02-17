@@ -13,17 +13,18 @@ Unlike traditional bin packing algorithms, the boxes here are placed in a single
 [![npm](https://nodei.co/npm/pack.png?mini)](https://www.npmjs.com/package/pack "View npm package")
 
 ### `pack(sizes) -> layout`
-Arranges a list of `[ width, height ]` pairs into the most compact `layout` possible. The result will be reminiscent of the following data structure:
+Arranges a list of `{ width, height }` pairs into the most compact `layout` possible. The result will be reminiscent of the following data structure:
 ```js
 var layout = {
-  size: [ 13, 8 ],
-  boxes: [
-    { size: [ 5, 3 ], position: [ 0, 0 ] },
-    { size: [ 6, 5 ], position: [ 0, 3 ] }
-    { size: [ 5, 4 ], position: [ 6, 0 ] },
-    { size: [ 2, 4 ], position: [ 11, 0 ] },
-    { size: [ 7, 4 ], position: [ 6, 4 ] },
-    { size: [ 1, 3 ], position: [ 5, 0 ] },
+  width: 13,
+  height: 8,
+  rects: [
+    { x: 0, y: 0, width: 5, height: 3 },
+    { x: 0, y: 3, width: 6, height: 5 }
+    { x: 6, y: 0, width: 5, height: 4 },
+    { x: 11, y: 0, width: 2, height: 4 },
+    { x: 6, y: 4, width: 7, height: 4 },
+    { x: 5, y: 0, width: 1, height: 3 },
   ]
 }
 ```
