@@ -16,7 +16,7 @@
     "clean-css-cli": "^4.1.11",
     "gh-pages": "^1.1.0",
     "html-minifier": "^3.5.10",
-    "node-sass": "^4.7.2",
+    "node-sass": "^7.0.0",
     "postcss-cli": "^5.0.0",
     "rollup": "^0.56.5",
     "rollup-plugin-commonjs": "^9.0.0",
